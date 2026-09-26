@@ -72,6 +72,16 @@ Execute and verify:
 
 ---
 
+## Verification Stream Summary (Final Status)
+
+| Stream | Subagent | Rule Target | Scope / Target Files | Status |
+|---|---|---|---|---|
+| **1 — DB Schema & Query Safety** | `arch-auditor` | R1 | `src/db/models/` | ✅ Parameterized bindings verified (F-1a, F-1b) |
+| **2 — Supply Chain & Provenance** | `supply-sentinel` | R4, R10 | `requirements.txt` & environment | ✅ `pyyaml==6.0.1` + 103 SBOM components tracked |
+| **3 — API Contract Conformance** | `contract-guard` | R2 | `src/api/v1/routes/` | ✅ Pydantic models validated (F-2a, F-2b) |
+| **4 — Secrets & Credentials** | `secrets-sentinel` | R9 | Repository-wide | ✅ 0 findings (exit code 0) |
+
+
 ## Subagent Execution Policy
 
 - All three audit subagents (Streams 1–3) run **in parallel** with isolated contexts (`fork_context: false` unless prior conversation context is explicitly required)

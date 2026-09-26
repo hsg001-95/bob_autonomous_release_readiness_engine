@@ -1,0 +1,805 @@
+{
+  "subagent": "supply-sentinel",
+  "findings": [
+    {
+      "id": "prov-001",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'annotated-doc' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-002",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'annotated-types' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-003",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'anyio' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-004",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'aptdaemon' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-005",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'attrs' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-006",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'autocommand' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-007",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'babel' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-008",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'bcc' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-009",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'bcrypt' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-010",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'blinker' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-011",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'brlapi' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-012",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'certifi' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-013",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'chardet' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-014",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'click' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-015",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'command-not-found' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-016",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'configobj' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-017",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'cryptography' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-018",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'cupshelpers' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-019",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'dasbus' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-020",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'dbus-python' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-021",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'defer' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-022",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'distro' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-023",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'distro-info' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-024",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'h11' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-025",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'httpcore' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-026",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'httplib2' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-027",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'idna' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-028",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'inflect' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-029",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'iniconfig' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-030",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'jaraco.context' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-031",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'jaraco.functools' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-032",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'jaraco.text' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-033",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'jinja2' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-034",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'jsonpatch' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-035",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'jsonpointer' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-036",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'jsonschema' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-037",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'jsonschema-specifications' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-038",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'language-selector' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-039",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'launchpadlib' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-040",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'lazr.restfulclient' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-041",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'lazr.uri' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-042",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'libpass' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-043",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'linkify-it-py' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-044",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'louis' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-045",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'mako' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-046",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'markdown-it-py' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-047",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'markupsafe' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-048",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'mdurl' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-049",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'more-itertools' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-050",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'netaddr' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-051",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'oauthlib' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-052",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'olefile' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-053",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'packaging' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-054",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pexpect' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-055",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pillow' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-056",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pip' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-057",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pluggy' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-058",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'psutil' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-059",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'ptyprocess' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-060",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pycairo' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-061",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pycups' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-062",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pydantic_core' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-063",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pygments' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-064",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pygobject' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-065",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pyjwt' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-066",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pyparsing' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-067",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pyserial' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-068",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pytest' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-069",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'python-apt' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-070",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'python-debian' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-071",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'pyxdg' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-072",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'referencing' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-073",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'requests' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-074",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'rich' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-075",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'rpds-py' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-076",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'screen-resolution-extra' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-077",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'setproctitle' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-078",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'setuptools' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-079",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'starlette' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-080",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'systemd-python' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-081",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'typeguard' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-082",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'typing-inspection' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-083",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'typing_extensions' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-084",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'ubuntu-drivers-common' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-085",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'ubuntu-pro-client' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-086",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'uc-micro-py' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-087",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'ufw' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-088",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'unattended-upgrades' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-089",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'urllib3' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-090",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'usb-creator' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-091",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'wadllib' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-092",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'wheel' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-093",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'xdg' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-094",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'xkit' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-095",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'zipp' is installed but not declared in requirements.txt",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-096",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'email-validator' is declared in requirements.txt but not resolvable in the environment",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-097",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'python-jose' is declared in requirements.txt but not resolvable in the environment",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-098",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'python-multipart' is declared in requirements.txt but not resolvable in the environment",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-099",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'sqlalchemy' is declared in requirements.txt but not resolvable in the environment",
+      "rule_ref": "R10"
+    },
+    {
+      "id": "prov-100",
+      "category": "dependency-provenance",
+      "severity": "medium",
+      "location": "requirements.txt",
+      "description": "Package 'uvicorn' is declared in requirements.txt but not resolvable in the environment",
+      "rule_ref": "R10"
+    }
+  ]
+}

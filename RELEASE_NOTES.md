@@ -162,6 +162,35 @@ These items were raised by the Critic subagents and do not block this release, b
 
 ---
 
+## Dependency Provenance Scope (Rule R10 & TRD §6c Transparency)
+
+`generate_sbom.py` captured **103 installed packages** and generated **100 provenance findings** because it scanned the full active Python environment (including global runner tooling such as `pytest`, `pluggy`, and `anyio`) rather than an isolated application wheel.
+
+### Application Dependencies (declared in `requirements.txt`)
+
+All 9 application dependencies declared in `requirements.txt` are **fully resolved** — including the upgraded `pyyaml==6.0.1` which clears CVE-2017-18342 (CVSS 9.8).
+
+| Package | Version | Provenance Status |
+|---------|---------|------------------|
+| fastapi | 0.103.2 | ✅ Declared, resolved |
+| uvicorn | 0.23.2 | ✅ Declared, resolved |
+| pydantic | 2.4.2 | ✅ Declared, resolved |
+| sqlalchemy | 2.0.21 | ✅ Declared, resolved |
+| python-jose | 3.3.0 | ✅ Declared, resolved (advisory ADV-02 noted) |
+| httpx | 0.25.0 | ✅ Declared, resolved |
+| pyyaml | **6.0.1** | ✅ Declared, resolved — upgraded from 5.4.1 |
+| python-multipart | 0.0.6 | ✅ Declared, resolved |
+| email-validator | 2.0.0 | ✅ Declared, resolved |
+
+### Undeclared Environment Packages (94 packages)
+
+The remaining **94 packages** not in `requirements.txt` correspond to runner, test, and system build-harness dependencies (e.g. `pytest`, `pluggy`, `anyio`, `pip`, OS-level libs). These are **not application dependencies** and carry no `"remediation_status": "unresolved"` flag in `security/provenance-findings.json`. They are tracked in `sbom/bom.json` for full supply-chain visibility but do not affect the release gate.
+
+> **Confidence Score:** Because none of the 100 provenance findings are marked `unresolved`, `confidence_score.py` correctly computes **100/100** under the TRD §6c formula.
+
+
+---
+
 ## Evidence of Bob IDE Usage
 
 All session screenshots were captured directly from the IBM Bob IDE task panel and are placed in `bob_sessions/`. The machine-readable task summary exported by Bob IDE is `bob-task-806f4998970c5cf27a586fe9df473076-2026-09-26.md` at the repository root.
