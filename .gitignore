@@ -1,0 +1,18 @@
+PRD.md
+RULEBOOK.md
+SKILL.md
+SYSTEM_ARCHITECTURE.md
+TRD.md
+WORKFLOW.md
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Pytest
+.pytest_cache/
+
+# SQLite DB
+*.db

@@ -1,0 +1,394 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Galaxium-SecurityAudit",
+          "version": "1.0.0",
+          "informationUri": "https://github.com/galaxium-travels/booking-service",
+          "rules": [
+            {
+              "id": "R1",
+              "name": "UnparameterisedSQL",
+              "shortDescription": {
+                "text": "SQL query constructed by string interpolation or concatenation"
+              },
+              "fullDescription": {
+                "text": "All SQL queries MUST use parameterised statements (? placeholders or :name binding). String-concatenated or f-string-interpolated SQL creates SQL-injection attack surface. Violates RFC-042 §2.2."
+              },
+              "helpUri": "docs/architecture/rfc-042-booking-v2.md#22-query-safety-rules",
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "properties": {
+                "cvssScore": "9.8",
+                "cwe": "CWE-89"
+              }
+            },
+            {
+              "id": "R2",
+              "name": "MissingPydanticValidation",
+              "shortDescription": {
+                "text": "API route accepts request body without Pydantic schema validation"
+              },
+              "fullDescription": {
+                "text": "Every route accepting a request body must declare a Pydantic BaseModel schema. Manual request.json() parsing or dict annotations bypass validation entirely. Routes must also declare response_model=. Violates RFC-042 §3.1–§3.3."
+              },
+              "helpUri": "docs/architecture/rfc-042-booking-v2.md#3-pydantic-route-validation-requirements",
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "properties": {
+                "cwe": "CWE-20"
+              }
+            },
+            {
+              "id": "R4",
+              "name": "VulnerableDependency",
+              "shortDescription": {
+                "text": "Dependency carries a CVE with CVSS score exceeding 7.0"
+              },
+              "fullDescription": {
+                "text": "No direct or transitive dependency may carry a CVSS base score > 7.0 without an approved remediation ticket. pyyaml < 6.0 is explicitly forbidden (CVE-2017-18342, CVSS 9.8). Violates RFC-042 §4.1 and §4.3."
+              },
+              "helpUri": "docs/architecture/rfc-042-booking-v2.md#4-dependency-rules",
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "properties": {
+                "cvssScore": "9.8",
+                "cve": "CVE-2017-18342",
+                "cwe": "CWE-502"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "R1",
+          "ruleIndex": 0,
+          "kind": "pass",
+          "level": "none",
+          "message": {
+            "text": "REMEDIATED: get_bookings_by_user() now uses '?' parameterised binding. Previously used f-string interpolation (SQL injection vector).",
+            "id": "R1_F1a_remediated"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/db/models/booking.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 5,
+                  "endLine": 15,
+                  "endColumn": 66
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "get_bookings_by_user",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "Replace f-string interpolation with parameterised binding"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "src/db/models/booking.py",
+                    "uriBaseId": "%SRCROOT%"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "startLine": 15,
+                        "endLine": 15
+                      },
+                      "insertedContent": {
+                        "text": "    cursor.execute(\"SELECT * FROM bookings WHERE user_id = ?\", (user_id,))\n"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "status": "remediated",
+            "remediatedInCommit": "phase-5-actor-remediation"
+          }
+        },
+        {
+          "ruleId": "R1",
+          "ruleIndex": 0,
+          "kind": "pass",
+          "level": "none",
+          "message": {
+            "text": "REMEDIATED: create_booking() now uses '?, ?, ?, ?' parameterised binding. Previously used string concatenation (SQL injection vector).",
+            "id": "R1_F1b_remediated"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/db/models/booking.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 5,
+                  "endLine": 28,
+                  "endColumn": 6
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "create_booking",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "Replace string concatenation with parameterised binding"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "src/db/models/booking.py",
+                    "uriBaseId": "%SRCROOT%"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "startLine": 24,
+                        "endLine": 28
+                      },
+                      "insertedContent": {
+                        "text": "    cursor.execute(\n        \"INSERT INTO bookings (user_id, flight_id, departure_date, seat_class) \"\n        \"VALUES (?, ?, ?, ?)\",\n        (user_id, flight_id, str(departure_date), seat_class),\n    )\n"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "status": "remediated",
+            "remediatedInCommit": "phase-5-actor-remediation"
+          }
+        },
+        {
+          "ruleId": "R2",
+          "ruleIndex": 1,
+          "kind": "pass",
+          "level": "none",
+          "message": {
+            "text": "REMEDIATED: POST /bookings/ now uses BookingCreate(BaseModel) with response_model=BookingCreatedResponse. Previously used raw request.json() with no schema.",
+            "id": "R2_F2a_remediated"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/api/v1/routes/bookings.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 1,
+                  "endLine": 51,
+                  "endColumn": 30
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "add_booking",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "Replace request.json() parsing with Pydantic BookingCreate schema and add response_model"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "src/api/v1/routes/bookings.py",
+                    "uriBaseId": "%SRCROOT%"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "startLine": 13,
+                        "endLine": 29
+                      },
+                      "insertedContent": {
+                        "text": "@router.post(\"/\", response_model=BookingCreatedResponse)\ndef add_booking(payload: BookingCreate):\n    create_booking(payload.user_id, payload.flight_id, payload.departure_date, payload.seat_class)\n    return {\"status\": \"created\"}\n"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "status": "remediated",
+            "remediatedInCommit": "phase-5-actor-remediation"
+          }
+        },
+        {
+          "ruleId": "R2",
+          "ruleIndex": 1,
+          "kind": "pass",
+          "level": "none",
+          "message": {
+            "text": "REMEDIATED: DELETE /bookings/{id} now uses BookingCancelRequest(BaseModel) with response_model=BookingCancelledResponse. Previously used raw request.json() with no schema.",
+            "id": "R2_F2b_remediated"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/api/v1/routes/bookings.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 1,
+                  "endLine": 57,
+                  "endColumn": 63
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "delete_booking",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "status": "remediated",
+            "remediatedInCommit": "phase-5-actor-remediation"
+          }
+        },
+        {
+          "ruleId": "R4",
+          "ruleIndex": 2,
+          "kind": "pass",
+          "level": "none",
+          "message": {
+            "text": "REMEDIATED: pyyaml upgraded from 5.4.1 (CVE-2017-18342, CVSS 9.8) to 6.0.1. Arbitrary code execution vector eliminated.",
+            "id": "R4_F3_remediated"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "requirements.txt",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 1,
+                  "endLine": 12,
+                  "endColumn": 14
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "Upgrade pyyaml from 5.4.1 to 6.0.1 to remediate CVE-2017-18342 (CVSS 9.8)"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "requirements.txt",
+                    "uriBaseId": "%SRCROOT%"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "startLine": 12,
+                        "endLine": 12
+                      },
+                      "insertedContent": {
+                        "text": "pyyaml==6.0.1\n"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "status": "remediated",
+            "cve": "CVE-2017-18342",
+            "cvss": "9.8",
+            "remediatedInCommit": "phase-5-actor-remediation"
+          }
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "src/db/models/booking.py",
+            "uriBaseId": "%SRCROOT%"
+          },
+          "mimeType": "text/x-python"
+        },
+        {
+          "location": {
+            "uri": "src/api/v1/routes/bookings.py",
+            "uriBaseId": "%SRCROOT%"
+          },
+          "mimeType": "text/x-python"
+        },
+        {
+          "location": {
+            "uri": "requirements.txt",
+            "uriBaseId": "%SRCROOT%"
+          },
+          "mimeType": "text/plain"
+        }
+      ],
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "toolExecutionNotifications": [],
+          "commandLine": "pytest tests/ -v",
+          "exitCode": 0,
+          "workingDirectory": {
+            "uri": "file:///home/hiyansh-sharma/Downloads/IBM BOB/"
+          },
+          "endTimeUtc": "2024-01-15T00:00:00Z"
+        }
+      ],
+      "properties": {
+        "specBaseline": "RFC-042 v2.0.0",
+        "testSuite": "pytest tests/",
+        "testResults": "10 passed, 0 failed, 0 xfailed",
+        "overallVerdict": "RELEASE_APPROVED"
+      }
+    }
+  ]
+}

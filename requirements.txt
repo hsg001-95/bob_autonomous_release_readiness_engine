@@ -1,0 +1,16 @@
+# Galaxium Travels — Python dependencies
+# All entries pinned with == per RFC-042 §4.1.
+
+fastapi==0.103.2
+uvicorn==0.23.2
+pydantic==2.4.2
+sqlalchemy==2.0.21
+python-jose==3.3.0
+httpx==0.25.0
+
+# Upgraded from 5.4.1 (CVE-2017-18342, CVSS 9.8) — RFC-042 §4.1, §4.3
+pyyaml==6.0.1
+
+# Additional dependencies
+python-multipart==0.0.6
+email-validator==2.0.0
