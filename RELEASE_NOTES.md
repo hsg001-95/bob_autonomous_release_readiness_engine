@@ -193,25 +193,20 @@ The remaining **94 packages** not in `requirements.txt` correspond to runner, te
 
 ## Evidence of Bob IDE Usage
 
-All session screenshots were captured directly from the IBM Bob IDE task panel and are placed in `bob_sessions/`. The machine-readable task summary exported by Bob IDE is `bob-task-806f4998970c5cf27a586fe9df473076-2026-09-26.md` at the repository root.
+All session screenshots were captured directly from the IBM Bob IDE task panel and are placed in `bob_sessions/`.
 
-### Screenshot Catalogue
+### Verified Session Snapshot Catalogue
 
-> **Note:** The `bob_sessions/` directory is the designated upload target per the IBM Bob 2.0 Hackathon submission guide ("Upload Bob task session summary"). Screenshots should be added here before final submission. The table below records the expected catalogue entries corresponding to each phase of the RRE workflow.
-
-| File (expected in `bob_sessions/`) | Phase | Content |
+| File | Activity | Bobcoins |
 |---|---|---|
-| `phase1-spec-parsing.png` | Phase 1 | Bob IDE parsing RFC-042 via Docling; structured sections extracted |
-| `phase2-audit-findings.png` | Phase 2 | Initial audit output identifying F-1, F-2, F-3 in the source tree |
-| `phase3-sarif-generation.png` | Phase 3 | SARIF 2.1.0 report generated at `security/audit-results.sarif` |
-| `phase4-actor-f1-patch.png` | Phase 5 | Actor subagent applying SQL parameterisation fix to `src/db/models/booking.py` |
-| `phase5-actor-f2-patch.png` | Phase 5 | Actor subagent adding Pydantic models to `src/api/v1/routes/bookings.py` |
-| `phase6-actor-f3-patch.png` | Phase 5 | Actor subagent upgrading `pyyaml` to 6.0.1 in `requirements.txt` |
-| `phase7-critic-verification.png` | Phase 6 | Critic subagent (fork_context: false) independently confirming each patch |
-| `phase8-pytest-10-pass.png` | Phase 7 | Bob IDE terminal showing `10 passed · 0 failed · 0 xfailed` |
-| `phase9-gate-exit0.png` | Phase 8 | Governance gate producing exit code 0 on clean repository |
-| `phase10-gate-exit1.png` | Phase 8 | Governance gate producing exit code 1 on injected schema violation |
-| `bobcoin-usage.png` | Summary | Bobcoin usage dashboard showing ~6.94 / 40.00 consumed |
+| `bob_sessions/team_task01_agents_summary.png` | AGENTS.md generation | 0.061 |
+| `bob_sessions/team_task02_remediation_summary.png` | Core remediation & regression tests (F-1, F-2, F-3 + Critic loop) | 6.88 |
+| `bob_sessions/task03_readme_update_summary.png` | Documentation alignment | 1.04 |
+| `bob_sessions/task04_doc_analysis_summary.png` | Document analysis & architecture review | 1.39 |
+| `bob_sessions/task05_secrets_fix_summary.png` | Secrets sentinel integration & allowlist fix | 6.93 |
+| `bob_sessions/budget_remaining_58pct.png` | Account budget card — 16.75 / 40.00 remaining (58%) | — |
+
+**Total consumed:** 23.25 / 40.00 Bobcoins · **Remaining balance:** 16.75 Bobcoins (58% budget remaining)
 
 To inspect the directory:
 

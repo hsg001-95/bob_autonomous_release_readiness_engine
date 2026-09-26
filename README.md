@@ -19,7 +19,12 @@ The RRE is a fully automated, AI-driven release-governance workflow built on IBM
 | **SARIF Compliance** | ✅ SARIF 2.1.0 Validated (OASIS standard) |
 | **Remediated Defects** | F-1 SQL Parameterization (R1) · F-2 Pydantic Schema Validation (R2) · F-3 CVE-2017-18342 PyYAML 6.0.1 (R4) |
 | **Governance Gate** | ✅ Phase 8 exit code 0 (clean) · exit code 1 on injected schema violation · 0% repository drift |
-| **Resource Consumption** | ~6.94 Bobcoins utilized out of 40.00 allowance |
+| **Subagents** | 4 parallel (arch-auditor · supply-sentinel · contract-guard · secrets-sentinel) |
+| **Rules Enforced** | 10 / 10 (R1–R10) |
+| **Secrets Scan** | ✅ 0 hardcoded credentials leaked (exit code 0) |
+| **SBOM** | 103 components tracked in `sbom/bom.json` (CycloneDX-lite) |
+| **Release Confidence Score** | 100 / 100 (TRD §6c) |
+| **Resource Consumption** | 23.25 / 40.00 Bobcoins consumed (58% budget remaining) |
 
 ---
 
@@ -158,7 +163,16 @@ Open [`RELEASE_NOTES.md`](RELEASE_NOTES.md) to review:
 ls -lh bob_sessions/
 ```
 
-Screenshots in `bob_sessions/` show the live Bob IDE task session across Phases 1–8. The session log file `bob-task-806f4998970c5cf27a586fe9df473076-2026-09-26.md` at the repository root is the machine-readable task summary exported by Bob IDE.
+All screenshots were captured directly from the IBM Bob IDE task panel. The verified session snapshots are:
+
+| File | Activity | Bobcoins |
+|---|---|---|
+| `bob_sessions/team_task01_agents_summary.png` | AGENTS.md generation | 0.061 |
+| `bob_sessions/team_task02_remediation_summary.png` | Core remediation & regression tests | 6.88 |
+| `bob_sessions/task03_readme_update_summary.png` | Documentation alignment | 1.04 |
+| `bob_sessions/task04_doc_analysis_summary.png` | Document analysis & architecture review | 1.39 |
+| `bob_sessions/task05_secrets_fix_summary.png` | Secrets sentinel integration & allowlist fix | 6.93 |
+| `bob_sessions/budget_remaining_58pct.png` | Account budget card — 16.75 / 40.00 remaining (58%) | — |
 
 ### Step 5 — Verify the governance gate (Phase 8)
 
@@ -180,14 +194,16 @@ echo "Exit code (clean): $?"
 
 ## Bobcoin Budget
 
-| Phase | Activity | Bobcoins |
+| Task | Activity | Bobcoins |
 |---|---|---|
-| 1–4 | Spec parsing, audit, SARIF generation | ~2.10 |
-| 5 | Actor patches (F-1, F-2, F-3) | ~2.40 |
-| 6 | Critic verification (3 × fork_context:false) | ~1.20 |
-| 7 | Regression suite execution + snapshot/restore | ~0.80 |
-| 8 | Governance gate + non-zero exit injection | ~0.44 |
-| **Total** | | **~6.94 / 40.00** |
+| Task 01 | AGENTS.md generation | 0.061 |
+| Task 02 | Core remediation & regression tests (F-1, F-2, F-3 + Critic loop) | 6.880 |
+| Task 03 | Documentation alignment | 1.040 |
+| Task 04 | Document analysis & architecture review | 1.390 |
+| Task 05 | Secrets sentinel integration & allowlist fix | 6.930 |
+| Misc | Remaining tooling, SBOM, confidence score, plan updates | 6.949 |
+| **Total consumed** | | **23.25 / 40.00** |
+| **Remaining balance** | 58% budget remaining | **16.75 Bobcoins** |
 
 ---
 
